@@ -1,0 +1,35 @@
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginPrettier from 'eslint-plugin-prettier';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
+
+export default [
+  {
+    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+    plugins: {
+      react: eslintPluginReact,
+      prettier: eslintPluginPrettier,
+      "react-hooks": eslintPluginReactHooks,
+      "jsx-a11y": eslintPluginJsxA11y,
+      "@typescript-eslint": typescriptEslintPlugin,
+    },
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    rules: {
+      "prettier/prettier": "error",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "jsx-a11y/anchor-is-valid": "warn",
+    },
+  },
+];
