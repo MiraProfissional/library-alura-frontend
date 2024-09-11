@@ -9,7 +9,6 @@ const Icons = styled.ul`
 `
 
 const Icon = styled.li`
-  list-style: none;
   margin-right: 40px;
   width: 25px;
 `

@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.css';
 import styled from 'styled-components';
 
 const Options = styled.ul`
@@ -15,7 +14,6 @@ const Option = styled.li`
   align-items: center;
   text-align: center;
   font-size: 16px;
-  list-style: none;
   cursor: pointer;
 `
 
