@@ -1,19 +1,31 @@
 import React from 'react';
-import './styles.css';
 import profile from '../../images/perfil.svg';
 import shoppingBage from '../../images/sacola.svg';
+import styled from 'styled-components';
+
+const Icons = styled.ul`
+  display: flex;
+  align-items: center;
+`
+
+const Icon = styled.li`
+  list-style: none;
+  margin-right: 40px;
+  width: 25px;
+`
+
 
 const icons = [profile, shoppingBage];
 
 function IconsHeader() {
   return (
-    <ul className="icons">
+    <Icons>
       {icons.map((icons) => (
-        <li className="icons-navbar">
+        <Icon className="icons-navbar">
           <img src={icons} alt="" />
-        </li>
+        </Icon>
       ))}
-    </ul>
+    </Icons>
   );
 }
 
