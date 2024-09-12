@@ -8,16 +8,16 @@ const HeaderContainer = styled.header`
   background-color: #fff;
   display: flex;
   justify-content: center;
-`
+`;
 
 function Header() {
   return (
-      <HeaderContainer>
-        <Logo />
-        <OptionsHeader />
-        <IconsHeader />
-      </HeaderContainer>
-  )
+    <HeaderContainer>
+      <Logo />
+      <OptionsHeader />
+      <IconsHeader />
+    </HeaderContainer>
+  );
 }
 
-export default Header
+export default Header;

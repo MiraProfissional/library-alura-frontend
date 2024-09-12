@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Options = styled.ul`
   display: flex;
-`
+`;
 
 const Option = styled.li`
   height: 100%;
@@ -15,7 +15,7 @@ const Option = styled.li`
   text-align: center;
   font-size: 16px;
   cursor: pointer;
-`
+`;
 
 const textOptions = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE'];
 
