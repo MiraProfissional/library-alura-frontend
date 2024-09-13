@@ -28,7 +28,7 @@ function LastReleases() {
       </Title>
       <NewBooksContainer>
         {books.map((book) => (
-          <img src={book.src} />
+          <img key={book.id} src={book.src} alt="book" />
         ))}
       </NewBooksContainer>
       <CardRecomender

@@ -17,14 +17,18 @@ const Option = styled.li`
   cursor: pointer;
 `;
 
-const textOptions = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE'];
+const textOptions = [
+  { id: 1, name: 'CATEGORIAS' },
+  { id: 2, name: 'FAVORITOS' },
+  { id: 3, name: 'MINHA ESTANTE' },
+];
 
 function OptionsHeader() {
   return (
     <Options>
       {textOptions.map((text) => (
-        <Option>
-          <p>{text}</p>
+        <Option key={text.id}>
+          <p>{text.name}</p>
         </Option>
       ))}
     </Options>

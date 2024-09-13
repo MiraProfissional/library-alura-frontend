@@ -13,14 +13,20 @@ const Icon = styled.li`
   width: 25px;
 `;
 
-const icons = [profile, shoppingBage];
+const icons = [
+  {
+    image: profile,
+    id: 1,
+  },
+  { image: shoppingBage, id: 2 },
+];
 
 function IconsHeader() {
   return (
     <Icons>
       {icons.map((icons) => (
-        <Icon>
-          <img src={icons} />
+        <Icon key={icons.id}>
+          <img src={icons.image} alt="icon" />
         </Icon>
       ))}
     </Icons>
