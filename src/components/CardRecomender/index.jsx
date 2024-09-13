@@ -1,6 +1,7 @@
 import React from 'react';
 import { Title } from '../Title';
 import styled from 'styled-components';
+import P from 'prop-types';
 
 const Card = styled.div`
   align-items: center;
@@ -64,3 +65,10 @@ function CardRecomender({ title, subtitle, description, image }) {
 }
 
 export default CardRecomender;
+
+CardRecomender.propTypes = {
+  title: P.string.isRequired,
+  subtitle: P.string.isRequired,
+  description: P.string.isRequired,
+  image: P.node.isRequired,
+};

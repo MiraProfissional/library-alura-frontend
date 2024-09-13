@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import P from 'prop-types';
 
 export const Title = styled.h2`
   width: 100%;
@@ -9,3 +10,9 @@ export const Title = styled.h2`
   text-align: ${(props) => props.align || 'center'};
   margin: 0;
 `;
+
+Title.propTypes = {
+  color: P.string,
+  fontSize: P.number,
+  align: P.string,
+};
