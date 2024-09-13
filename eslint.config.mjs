@@ -2,7 +2,6 @@ import eslintPluginReact from 'eslint-plugin-react';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
-import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
 
 export default [
   {
@@ -12,7 +11,6 @@ export default [
       prettier: eslintPluginPrettier,
       "react-hooks": eslintPluginReactHooks,
       "jsx-a11y": eslintPluginJsxA11y,
-      "@typescript-eslint": typescriptEslintPlugin,
     },
     languageOptions: {
       ecmaVersion: "latest",

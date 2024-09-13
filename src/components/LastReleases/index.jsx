@@ -2,6 +2,8 @@ import React from 'react';
 import { books } from './dataLastReleases';
 import styled from 'styled-components';
 import { Title } from '../Title';
+import CardRecomender from '../CardRecomender';
+import imageBook from '../../images/livro2.png';
 
 const LastReleasesContainer = styled.section`
   background-color: #ebecee;
@@ -29,6 +31,12 @@ function LastReleases() {
           <img src={book.src} />
         ))}
       </NewBooksContainer>
+      <CardRecomender
+        title="Talvez você se interesse por"
+        subtitle="Angular 11"
+        description="Construindo uma aplicação com a plataforma Google"
+        image={imageBook}
+      />
     </LastReleasesContainer>
   );
 }
