@@ -13,6 +13,6 @@ export const Title = styled.h2`
 
 Title.propTypes = {
   color: P.string,
-  fontSize: P.number,
+  fontSize: P.string,
   align: P.string,
 };
