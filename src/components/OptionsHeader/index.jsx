@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Options = styled.ul`
   display: flex;
@@ -20,16 +21,18 @@ const Option = styled.li`
 const textOptions = [
   { id: 1, name: 'CATEGORIAS' },
   { id: 2, name: 'FAVORITOS' },
-  { id: 3, name: 'MINHA ESTANTE' },
+  { id: 3, name: 'ESTANTE' },
 ];
 
 function OptionsHeader() {
   return (
     <Options>
       {textOptions.map((text) => (
-        <Option key={text.id}>
-          <p>{text.name}</p>
-        </Option>
+        <Link to={`/${text.name.toLowerCase()}`}>
+          <Option key={text.id}>
+            <p>{text.name}</p>
+          </Option>
+        </Link>
       ))}
     </Options>
   );
