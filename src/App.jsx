@@ -12,7 +12,6 @@ const AppContainer = styled.div`
 function App() {
   return (
     <AppContainer>
-      <Header />
       <Search />
       <LastReleases />
     </AppContainer>
