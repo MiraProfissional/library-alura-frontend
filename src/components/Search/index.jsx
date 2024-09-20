@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from '../Input';
 import styled from 'styled-components';
-import { books } from './dataSearch';
+import { getBooks } from '../../services/books';
 
 const SearchContainer = styled.section`
   color: #fff;
@@ -41,6 +41,16 @@ const ResultSearch = styled.div`
 
 function Search() {
   const [searchedBooks, setSearchedBooks] = useState([]);
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  async function fetchBooks() {
+    const booksAPI = await getBooks();
+    setBooks(booksAPI);
+  }
 
   return (
     <SearchContainer>
