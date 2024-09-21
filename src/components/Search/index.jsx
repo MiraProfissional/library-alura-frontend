@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Input from '../Input';
 import styled from 'styled-components';
 import { getBooks } from '../../services/books';
+import defaultImage from '../../images/livro.png';
 
 const SearchContainer = styled.section`
   color: #fff;
@@ -69,7 +70,7 @@ function Search() {
       />
       {searchedBooks.map((book) => (
         <ResultSearch>
-          <img src={book.src} alt={book.name} />
+          <img src={defaultImage} alt={book.name} />
           <p>{book.name}</p>
         </ResultSearch>
       ))}

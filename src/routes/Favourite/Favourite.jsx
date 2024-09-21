@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getFavourites } from '../../services/favourites';
 import styled from 'styled-components';
+import defaultImage from '../../images/livro.png';
 
 const FavouriteContainer = styled.div`
   width: 100vw;
@@ -62,6 +63,7 @@ function Favourite() {
           {favourites.length !== 0
             ? favourites.map((favorito) => (
                 <ResultFavourite>
+                  <img src={defaultImage} alt={favorito.name} />
                   <p>{favorito.name}</p>
                 </ResultFavourite>
               ))
