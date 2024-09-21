@@ -8,14 +8,23 @@ const FavouriteContainer = styled.div`
   background-image: linear-gradient(90deg, #002f52 35%, #326589);
 `;
 
-const ResultSearch = styled.div`
+const ResultSearchFavourites = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const ResultFavourite = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
   cursor: pointer;
+  text-align: center;
+  padding: 0 100px;
   p {
     width: 200px;
+    color: #fff;
   }
   img {
     width: 100px;
@@ -23,6 +32,14 @@ const ResultSearch = styled.div`
   &:hover {
     border: 1px solid white;
   }
+`;
+
+const Title = styled.h2`
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+  width: 100%;
+  padding-top: 35px;
 `;
 
 function Favourite() {
@@ -39,12 +56,18 @@ function Favourite() {
 
   return (
     <FavouriteContainer>
-      {favourites.map((favaouriteBook) => (
-        <ResultSearch>
-          <img src={favaouriteBook.src} alt={favaouriteBook.nome} />
-          <p>{favaouriteBook.name}</p>
-        </ResultSearch>
-      ))}
+      <div>
+        <Title>Aqui estão seus livros favoritos:</Title>
+        <ResultSearchFavourites>
+          {favourites.length !== 0
+            ? favourites.map((favorito) => (
+                <ResultFavourite>
+                  <p>{favorito.name}</p>
+                </ResultFavourite>
+              ))
+            : null}
+        </ResultSearchFavourites>
+      </div>
     </FavouriteContainer>
   );
 }
