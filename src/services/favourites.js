@@ -9,4 +9,12 @@ async function getFavourites() {
   return response.data;
 }
 
-export { getFavourites };
+async function postFavourites(id) {
+  await favouritesAPI.post(`/${id}`);
+}
+
+async function deleteFavourites(id) {
+  await favouritesAPI.delete(`/${id}`);
+}
+
+export { getFavourites, postFavourites, deleteFavourites };
