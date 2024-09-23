@@ -8,9 +8,11 @@ import { postFavourites } from '../../services/favourites';
 const SearchContainer = styled.section`
   color: #fff;
   text-align: center;
-  padding: 85px 0;
-  height: 270px;
+  min-height: 80vh;
   width: 100%;
+  padding-top: 85px;
+  background-image: linear-gradient(90deg, #002f52 35%, #326589);
+  margin: 0 auto;
 `;
 
 const Title = styled.h2`
@@ -28,7 +30,7 @@ const ResultSearch = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   cursor: pointer;
   p {
     width: 200px;

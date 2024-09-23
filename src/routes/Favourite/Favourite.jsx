@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getFavourites } from '../../services/favourites';
+import { deleteFavourites, getFavourites } from '../../services/favourites';
 import styled from 'styled-components';
 import defaultImage from '../../images/livro.png';
 
@@ -55,16 +55,22 @@ function Favourite() {
     setFavourites(favouritesAPI);
   }
 
+  async function deleteFavourite(id) {
+    await deleteFavourites(id);
+    alert(`Livro com id ${id} deletado!`);
+    await fetchFavourites();
+  }
+
   return (
     <FavouriteContainer>
       <div>
         <Title>Aqui estão seus livros favoritos:</Title>
         <ResultSearchFavourites>
           {favourites.length !== 0
-            ? favourites.map((favorito) => (
-                <ResultFavourite>
-                  <img src={defaultImage} alt={favorito.name} />
-                  <p>{favorito.name}</p>
+            ? favourites.map((favourite) => (
+                <ResultFavourite onClick={() => deleteFavourite(favourite.id)}>
+                  <img src={defaultImage} alt={favourite.name} />
+                  <p>{favourite.name}</p>
                 </ResultFavourite>
               ))
             : null}
