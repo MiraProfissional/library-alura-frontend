@@ -4,7 +4,7 @@ import Home from './routes/Home/Home';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Favourite from './routes/Favourite/Favourite';
+import Favorites from './routes/Favorites/Favorites';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -42,7 +42,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/favoritos" element={<Favourite />} />
+        <Route path="/favoritos" element={<Favorites />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

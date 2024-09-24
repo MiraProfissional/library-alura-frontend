@@ -3,7 +3,7 @@ import Input from '../Input';
 import styled from 'styled-components';
 import { getBooks } from '../../services/books';
 import defaultImage from '../../images/livro.png';
-import { postFavourites } from '../../services/favourites';
+import { postFavorites } from '../../services/favorites';
 
 const SearchContainer = styled.section`
   color: #fff;
@@ -56,8 +56,8 @@ function Search() {
     setBooks(booksAPI);
   }
 
-  async function insertFavourite(id) {
-    await postFavourites(id);
+  async function insertFavorite(id) {
+    await postFavorites(id);
     alert(`Livro com id ${id} inserido!`);
   }
 
@@ -77,7 +77,7 @@ function Search() {
         }}
       />
       {searchedBooks.map((book) => (
-        <ResultSearch onClick={() => insertFavourite(book.id)}>
+        <ResultSearch onClick={() => insertFavorite(book.id)}>
           <img src={defaultImage} alt={book.name} />
           <p>{book.name}</p>
         </ResultSearch>
